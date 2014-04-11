@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Colour Palette</title>
+<style type="text/css">
+body{margin:0; padding:0}
+.clrs{margin:0; padding:0; width:100%; overflow:hidden}
+.clrs li{margin:0; padding:0; width:100px; float:left; margin:10px 10px 0 0; list-style-type:none; border:1px solid #e3e3e3; padding:2px 2px 2px 5px; border-radius:5px}
+.clrs li span{line-height:30px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; font-size:16px; color:#666; float:left}
+.clrs li a{border:1px solid #CCC; text-decoration:none; width:30px; height:30px; border-radius:3px; background-color:#eaeaea;float:right}
+
+div.clrs{margin:0; padding:0; overflow:hidden; width:100px; float:left; margin:10px 10px 0 0; list-style-type:none; border:1px solid #e3e3e3; padding:2px 2px 2px 5px; border-radius:5px}
+div.clrs span{line-height:30px; font-family:"Trebuchet MS", Arial, Helvetica, sans-serif; font-weight:normal; font-size:16px; color:#666; float:left}
+div.clrs a{border:1px solid #CCC; text-decoration:none; width:30px; height:30px; border-radius:3px; background-color:#eaeaea;float:right}
+
+.pLayer{position:absolute;background-color:#fff;padding-bottom:1px;border:1px solid #aaa;display:block;width:133px;display:none}
+.pLayer ul{margin:0; padding:0; width:100%; overflow:hidden}
+.pLayer ul li{margin:1px 0 0 1px;padding:0; list-style-type:none;float:left}
+.pLayer ul li a{width:19px;height:19px;display:block;border:1px solid #e3e3e3;text-decoration:none;font-size:9px;text-align:center;line-height:19px}
+.pLayer ul li a.sel{border:1px solid #000; outline:none}
+.dspB{display:block !important}
+</style>
+<script type="text/javascript" src="naukri_framework_v1.1-min.js"></script>
+<script type="text/javascript" src="pjsGeneric.js"></script>
+<script type="text/javascript">
+	$n(document).ready(function(){
+		colorArray1 = ['#000000','#ff3333','#ff0099','#ff00ff','#cc00ff','#69C','#336699','#33ffff','#00ffca','#00ff99','#00ff66','#ccff66','#99ff00','#ffffcc','#ffff00','#ffcc99','#ff9900','#ff6633'];
+		
+		colorPalette2.create({
+				'pCont1' : {colors : colorArray1,	onColorSelect : showColorCode},		
+				'pCont2' : {onColorSelect : showColorCode},
+				'pCont3' : {onColorSelect : showColorCode}
+		});
+		
+		function showColorCode(o){o.obj.parent().childrens('span').eq(0).html(o.colorCode)}
+	})
+	
+	
+</script>
+</head>
+
+<body style="height:550px">
+<div style="width:400px; margin:0 auto">
+	<ul class="clrs">
+    	<li><span></span><a href="javascript:void(0)" id="pCont1">&nbsp;</a></li>
+	    <li><span></span><a href="javascript:void(0)" id="pCont2">&nbsp;</a></li>
+    </ul>
+    <div class="clrs"><span></span><a href="javascript:void(0)" id="pCont3">&nbsp;</a></div>
+</div>
+</body>
+</html>
